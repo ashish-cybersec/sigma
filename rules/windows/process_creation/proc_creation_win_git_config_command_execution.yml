@@ -6,7 +6,7 @@ description: |
     Git executes the value of several configuration directives as external programs. This allows a threat actor to abuse the trusted "git.exe" binary as a proxy to run arbitrary commands and evade detection (indirect command execution).
     Note that the closely related abuse where the payload is stored inside a repository's ".git/config" file (e.g. "core.fsmonitor") and triggered when an editor or IDE automatically runs "git status" is not observable on the "git.exe" command line and is therefore out of scope for this command-line based rule.
 references:
-    - https://github.com/justinsteven/advisories/blob/main/2022_git_buried_bare_repos_and_fsmonitor_various_abuses.md
+    - https://github.com/justinsteven/advisories/blob/c6754fdb255aed503a3cd40023c54419f820c3b3/2022_git_buried_bare_repos_and_fsmonitor_various_abuses.md
     - https://www.cobalt.io/blog/red-team-technique-exploiting-git-fsmonitor-for-initial-access
     - https://github.com/RootUp/git-fsmonitor
     - https://gtfobins.github.io/gtfobins/git/
