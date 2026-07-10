@@ -1,8 +1,5 @@
 title: HackTool - PrintSpoofer Execution
 id: 8d280471-b4a1-4105-8417-c6edc0c3bf9b
-related:
-    - id: e8d34729-86a4-4140-adfd-0a29c2106307
-      type: similar
 status: experimental
 description: |
     Detects the execution of PrintSpoofer, a privilege escalation tool by @itm4n that abuses
@@ -30,10 +27,12 @@ detection:
             - '\PrintSpoofer32.exe'
             - '\PrintSpoofer64.exe'
         - OriginalFileName: 'PrintSpoofer.exe'
-    selection_cli:
+    selection_cli_flags:
         CommandLine|contains:
             - ' -i -c '
-            - 'pipe\spoolss'
+            - ' -d '
+    selection_cli_pipe:
+        CommandLine|contains: 'pipe\spoolss'
     condition: 1 of selection_*
 falsepositives:
     - Unlikely. PrintSpoofer has no legitimate administrative use in production environments.
