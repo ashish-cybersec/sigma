@@ -38,6 +38,6 @@ detection:
             - ' --domain '
     condition: selection_img or all of selection_cli_*
 falsepositives:
-    - Unlikely. Kerbrute has no legitimate administrative use outside of authorised red team engagements.
+    - Unknown
 level: high
 regression_tests_path: regression_data/rules/windows/process_creation/proc_creation_win_hktl_kerbrute/info.yml
